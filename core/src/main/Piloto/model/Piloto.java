@@ -3,14 +3,15 @@ package model;
 import exception.ExceptionPiloto;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 public class Piloto {
-    private long id;
+    private UUID id;
     private String nombre;
     private String documento;
     private LocalDateTime fecha_Nacimiento;
 
-    private Piloto(long id,String nombre,String documento,LocalDateTime fecha_Nacimiento){
+    private Piloto(UUID id,String nombre,String documento,LocalDateTime fecha_Nacimiento){
         this.id=id;
         this.nombre=nombre;
         this.documento=documento;
@@ -18,7 +19,7 @@ public class Piloto {
 
     }
 
-    public static Piloto intancia(long id,String nombre,String documento,LocalDateTime fecha_Nacimiento) throws ExceptionPiloto {
+    public static Piloto intancia(UUID id,String nombre,String documento,LocalDateTime fecha_Nacimiento) throws ExceptionPiloto {
         if(nombre==null|| nombre.isBlank()){
             throw new ExceptionPiloto("El nombre no puede ser nulo ni vacio");
         }
@@ -48,5 +49,13 @@ public class Piloto {
             edad--;
         }
         return edad;
+    }
+
+    public String getDocumento() {
+        return documento;
+    }
+
+    public UUID getId() {
+        return id;
     }
 }
