@@ -25,6 +25,7 @@ public class CasoDeUsoRegistrarPiloto implements IRegistrarPilotoInput {
         }else{
 
             repositorio.registrarPilotoOutput(piloto);
+
         }
 
         return piloto.getId();

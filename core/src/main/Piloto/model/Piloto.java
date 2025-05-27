@@ -29,7 +29,7 @@ public class Piloto {
         }
 
         if(fecha_Nacimiento==null ){
-            throw new ExceptionPiloto("La fecha de nacimiento no puede ser nula ni futura");
+            throw new ExceptionPiloto("La fecha de nacimiento no puede ser nula");
         }
 
         if(getEdad(fecha_Nacimiento) < 18) {
